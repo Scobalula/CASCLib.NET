@@ -38,6 +38,8 @@ CASCLibNET::CASCStorage::CASCStorage(System::String^ path, System::Int32 localeM
 	InteropUtility::ToStdString(path, filePathStd);
 #endif
 
+	_FilePath = path;
+
 	HANDLE handle;
 	size_t fileCount;
 	size_t result;
