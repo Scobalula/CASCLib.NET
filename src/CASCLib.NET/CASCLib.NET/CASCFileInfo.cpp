@@ -27,7 +27,12 @@
 #include "pch.h"
 #include "CASCFileInfo.h"
 
-CASCLibNET::CASCFileInfo::CASCFileInfo(String^ fileName, Int64 fileSize, Boolean isLocal, array<System::Byte>^ cKey, array<System::Byte>^ eKey)
+CASCLibNET::CASCFileInfo::CASCFileInfo(
+	String^ fileName, 
+	Int64 fileSize, 
+	Boolean isLocal, 
+	array<System::Byte>^ cKey, 
+	array<System::Byte>^ eKey)
 {
 	_FileName = fileName;
 	_FileSize = fileSize;

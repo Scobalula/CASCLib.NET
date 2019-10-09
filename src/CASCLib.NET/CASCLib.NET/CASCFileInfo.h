@@ -34,6 +34,9 @@ using namespace System::Runtime::InteropServices;
 
 namespace CASCLibNET
 {
+	/// <summary>
+	/// Provides a class to hold CASC File Info
+	/// </summary>
 	public ref class CASCFileInfo
 	{
 	private:
@@ -117,7 +120,20 @@ namespace CASCLibNET
 			}
 		}
 
-		CASCFileInfo(String^ fileName, Int64 fileSize, Boolean isLocal, array<System::Byte>^ cKey, array<System::Byte>^ eKey);
+		/// <summary>
+		/// Initializes a new instance of the <see cref="CASCFileInfo"/> class
+		/// </summary>
+		/// <param name="fileName">Name of the CASC File.</param>
+		/// <param name="fileSize">Size of the CASC File.</param>
+		/// <param name="isLocal">Whether or not this file is local.</param>
+		/// <param name="cKey">File's Content Key.</param>
+		/// <param name="eKey">File's Encoded Key.</param>
+		CASCFileInfo(
+			String^ fileName, 
+			Int64 fileSize, 
+			Boolean isLocal, 
+			array<System::Byte>^ cKey, 
+			array<System::Byte>^ eKey);
 	};
 }
 

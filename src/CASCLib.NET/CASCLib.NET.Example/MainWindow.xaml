@@ -3,10 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CASCLib.NET.Example"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="CASCLib.NET.Example" Height="450" Width="800" MinHeight="450" MinWidth="800">
+	<Grid>
+		<ListView x:Name="FileList" VirtualizingStackPanel.IsVirtualizing="True" VirtualizingStackPanel.VirtualizationMode="Recycling" ItemsSource="{Binding CASCFiles}" AllowDrop="True" Margin="10,10,10,43">
+			<ListView.View>
+				<GridView>
+					<GridViewColumn Width="256" Header="File Name" DisplayMemberBinding="{Binding FileName}"/>
+					<GridViewColumn Width="256" Header="File Size" DisplayMemberBinding="{Binding Size}"/>
+					<GridViewColumn Width="128" Header="IsLocal" DisplayMemberBinding="{Binding IsLocal}"/>
+				</GridView>
+			</ListView.View>
+		</ListView>
+		<Button Content="Open Storage" HorizontalAlignment="Left" Click="OpenStorageClick" Margin="10,0,0,10" Width="105" Height="28" VerticalAlignment="Bottom"/>
+		<Button Content="Extract File" HorizontalAlignment="Left" Click="ExtractFileClick"  Margin="120,0,0,10" Width="105" Height="28" VerticalAlignment="Bottom"/>
+		<Button Content="Close Storage" HorizontalAlignment="Left" Click="CloseStorageClick"  Margin="230,0,0,10" Width="105" Height="28" VerticalAlignment="Bottom"/>
+	</Grid>
 </Window>

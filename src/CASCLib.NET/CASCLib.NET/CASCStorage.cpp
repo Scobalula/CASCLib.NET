@@ -78,6 +78,8 @@ CASCLibNET::CASCStorage::CASCStorage(System::String^ path, System::Int32 localeM
 		while (CascFindNextFile(fileHandle, &findData));
 	}
 
+	CascFindClose(fileHandle);
+
 	_StorageHandle = handle;
 }
 
@@ -94,12 +96,13 @@ CASCLibNET::CASCFileStream^ CASCLibNET::CASCStorage::OpenFile(String^ fileName)
 	InteropUtility::ToStdString(fileName, filePathStd);
 
 	if (!CascOpenFile(_StorageHandle, filePathStd.c_str(), 0, 0, &handle))
-		throw gcnew System::IO::IOException("Failed to CASC File");
+		throw gcnew System::IO::IOException("Failed to open CASC File");
 
 	return gcnew CASCLibNET::CASCFileStream(IntPtr(handle));
 }
 
 CASCLibNET::CASCStorage::~CASCStorage()
 {
+	_Files = nullptr;
 	CascCloseStorage(_StorageHandle);
 }
