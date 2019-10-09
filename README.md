@@ -5,6 +5,13 @@ A wrapper around Ladislav Zezula's CASC Library for .NET that provides classes a
 
 NOTE: The library uses **unsafe** code (i.e. Native C++ code) to provide fast and easy interop between CascLib and .NET, which might not be allowed in some enviroments.
 
+# Requirements
+
+The binaries provided require the following:
+
+* Visual Studio 2019 Runtime
+* .NET Framework 4.7.2
+
 # Using the Library
 
 Download x86/x64 Debug/Release binaries from the [Releases](https://github.com/Scobalula/CASCLib.NET/releases) page and add them to your .NET project (depending on if your projects are x86/x64). See the [Wiki](https://github.com/Scobalula/CASCLib.NET/wiki) for API documentation or see below for quick examples.
@@ -14,6 +21,8 @@ A basic [Example Project](https://github.com/Scobalula/CASCLib.NET/tree/master/s
 # Reporting Bugs/Contributing
 
 The library has been extensively tested on Overwatch, Call of Duty: Modern Warfare Beta, and Call of Duty: Black Ops IIII. If you find any bugs simply open an issues on the [Issues](https://github.com/Scobalula/CASCLib.NET/issues) page with the required info. The library was made for my own tools but I'm happy to fix any bugs with specific games, etc. and to possibly provide more features.
+
+The library has been written to target the .NET Framework and is only tested on Windows.
 
 If you'd like to contribute simply fork, edit, and make a pull request. Make sure to document methods, properties, etc. Contributed code for this library is assumed to be licensed to me under the same [License](https://github.com/Scobalula/CASCLib.NET/blob/master/LICENSE) as the library.
 
